@@ -1,8 +1,7 @@
-package fellner.example.fellner.notenshaker;
+package com.fellner.notenshaker;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +9,21 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fellner.fellner.notenshaker.R;
+
+import java.util.ArrayList;
+
 /**
  * Created by Fellner on 18.12.14.
  */
 public class SimpleArrayAdapter extends ArrayAdapter<String> {
 
     private final Context context;
-    private final String[] values;
+    static ArrayList<String> values;
     private final int resource;
 
-    public SimpleArrayAdapter(Context context, int resource, String[] values) {
-        super(context, resource, values);
+    public SimpleArrayAdapter(Context context, int resource, ArrayList<String> values) {
+        super(context,resource,values);
         this.context = context;
         this.values = values;
         this.resource = resource;
@@ -33,7 +36,7 @@ public class SimpleArrayAdapter extends ArrayAdapter<String> {
         View rowView = inflater.inflate(resource, parent, false);
 
         TextView textView = (TextView)rowView.findViewById(R.id.listview_item_text);
-        textView.setText(values[position]);
+        textView.setText(values.get(position));
         textView.setTextColor(Color.WHITE);
         ImageView imageView = (ImageView)rowView.findViewById(R.id.listview_item_image);
         if(!textView.getText().toString().contains("Average")){

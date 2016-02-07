@@ -1,4 +1,4 @@
-package fellner.example.fellner.notenshaker;
+package com.fellner.fellner.notenshaker;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

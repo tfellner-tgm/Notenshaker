@@ -5,7 +5,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "fellner.example.fellner.notenshaker"
+        applicationId "com.fellner.notenshaker"
         minSdkVersion 19
         targetSdkVersion 20
         versionCode 1
